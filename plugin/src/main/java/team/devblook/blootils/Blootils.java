@@ -1,9 +1,8 @@
-package io.devblook.template;
+package team.devblook.blootils;
 
 import org.bukkit.plugin.java.JavaPlugin;
 
-public class PluginTemplate extends JavaPlugin {
-
+public class Blootils extends JavaPlugin {
 
     @Override
     public void onEnable() {

@@ -1,4 +1,4 @@
-package io.devblook.template.api;
+package team.devblook.blootils.api;
 
 public interface Service {
 
