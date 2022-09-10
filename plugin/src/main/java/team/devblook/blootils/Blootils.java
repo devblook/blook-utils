@@ -1,6 +1,9 @@
 package team.devblook.blootils;
 
 import org.bukkit.plugin.java.JavaPlugin;
+import team.devblook.blootils.command.FeedCommand;
+import team.devblook.blootils.command.FlyCommand;
+import team.devblook.blootils.command.HealCommand;
 import team.devblook.blootils.managers.UsersData;
 
 public class Blootils extends JavaPlugin {
@@ -11,7 +14,9 @@ public class Blootils extends JavaPlugin {
     @Override
     public void onEnable() {
         this.usersData = new UsersData();
-        // Plugin startup logic
+        this.getCommand("fly").setExecutor(new FlyCommand());
+        this.getCommand("feed").setExecutor(new FeedCommand());
+        this.getCommand("heal").setExecutor(new HealCommand());
     }
 
     @Override
