@@ -11,23 +11,22 @@ public class FlyCommand implements CommandExecutor {
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        if (sender instanceof Player) {
-            Player p = (Player) sender;
-            if (!p.hasPermission("blootils.fly")) {
-                p.sendMessage(ChatColor.RED + "You don't have the enough permissions to access this command.");
-                p.playSound(p.getLocation(), Sound.ENTITY_ITEM_BREAK, 1, 1);
+        if (sender instanceof Player player) {
+            if (!player.hasPermission("blootils.fly")) {
+                player.sendMessage(ChatColor.RED + "You don't have the enough permissions to access this command.");
+                player.playSound(player.getLocation(), Sound.ENTITY_ITEM_BREAK, 1, 1);
                 return true;
             }else{
-                if (p.getAllowFlight() == true) {
-                    p.setAllowFlight(false);
-                    p.sendMessage(ChatColor.RED + "Fly disabled.");
-                    p.playSound(p.getLocation(), Sound.BLOCK_LEVER_CLICK, 1, 1);
+                if (!player.getAllowFlight()) {
+                    player.setAllowFlight(false);
+                    player.sendMessage(ChatColor.RED + "Fly disabled.");
+                    player.playSound(player.getLocation(), Sound.BLOCK_LEVER_CLICK, 1, 1);
                     return true;
                 }
-                if(p.getAllowFlight() == false) {
-                    p.setAllowFlight(true);
-                    p.sendMessage(ChatColor.GREEN + "Fly enabled.");
-                    p.playSound(p.getLocation(), Sound.BLOCK_LEVER_CLICK, 1, 1);
+                if(!player.getAllowFlight()) {
+                    player.setAllowFlight(true);
+                    player.sendMessage(ChatColor.GREEN + "Fly enabled.");
+                    player.playSound(player.getLocation(), Sound.BLOCK_LEVER_CLICK, 1, 1);
                     return true;
                     }
                 }
