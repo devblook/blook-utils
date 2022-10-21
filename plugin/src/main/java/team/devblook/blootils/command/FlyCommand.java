@@ -18,17 +18,17 @@ public class FlyCommand implements CommandExecutor {
                 return true;
             }else{
                 if (!player.getAllowFlight()) {
-                    player.setAllowFlight(false);
-                    player.sendMessage(ChatColor.RED + "Fly disabled.");
+                    player.setAllowFlight(true);
+                    player.sendMessage(ChatColor.GREEN + "Fly Enabled.");
                     player.playSound(player.getLocation(), Sound.BLOCK_LEVER_CLICK, 1, 1);
                     return true;
                 }
-                if(!player.getAllowFlight()) {
-                    player.setAllowFlight(true);
-                    player.sendMessage(ChatColor.GREEN + "Fly enabled.");
+                if (player.getAllowFlight()) {
+                    player.setAllowFlight(false);
+                    player.sendMessage(ChatColor.RED + "Fly Disabled.");
                     player.playSound(player.getLocation(), Sound.BLOCK_LEVER_CLICK, 1, 1);
                     return true;
-                    }
+                }
                 }
             }
         return false;
