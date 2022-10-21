@@ -21,7 +21,7 @@ public class FlyCommand implements CommandExecutor {
                     player.setAllowFlight(true);
                     player.sendMessage(ChatColor.GREEN + "Fly Enabled.");
                     player.playSound(player.getLocation(), Sound.BLOCK_LEVER_CLICK, 1, 1);
-                    return true;
+
                 }
                 if (player.getAllowFlight()) {
                     player.setAllowFlight(false);
