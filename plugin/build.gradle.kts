@@ -45,7 +45,7 @@ bukkit {
         register("feed") {
             description = "Refill Food"
             permission = "blootils.command.food"
-            usage = "/flood"
+            usage = "/feed"
         }
         register("heal") {
             description = "Recover all life"
