@@ -42,7 +42,7 @@ bukkit {
             permission = "blootils.command.fly"
             usage = "/fly"
         }
-        register("food") {
+        register("feed") {
             description = "Refill Food"
             permission = "blootils.command.food"
             usage = "/flood"
