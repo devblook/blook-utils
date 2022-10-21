@@ -37,6 +37,21 @@ bukkit {
             permission = "blootils.command.blootils"
             usage = "/blootils help"
         }
+        register("fly") {
+            description = "Active FLy"
+            permission = "blootils.command.fly"
+            usage = "/fly"
+        }
+        register("food") {
+            description = "Refill Food"
+            permission = "blootils.command.food"
+            usage = "/flood"
+        }
+        register("heal") {
+            description = "Recover all life"
+            permission = "blootils.command.heal"
+            usage = "/heal"
+        }
     }
 }
 
