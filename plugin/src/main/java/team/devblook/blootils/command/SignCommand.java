@@ -41,34 +41,34 @@ public class SignCommand implements TabExecutor {
 
                         return true;
                     }if (args.length==2){
-                        if(args[1].equalsIgnoreCase("clearAll")){
-                            PlayerView.clearAll(p);
-                            p.sendMessage(ChatColor.GREEN + "Cleared all lines");
-                            return true;
-                        }
-                        else{
-                            if (args[1].equalsIgnoreCase("1")) {
-                                PlayerView.viewBlockActual(p, 0, "");
-                                p.sendMessage(ChatColor.GREEN + "Cleared line 1");
-                                return true;
-                            }else if (args[1].equalsIgnoreCase("2")) {
-                                PlayerView.viewBlockActual(p, 1, "");
-                                p.sendMessage(ChatColor.GREEN + "Cleared line 2");
-                                return true;
-                            } else if (args[1].equalsIgnoreCase("3")) {
-                                PlayerView.viewBlockActual(p, 2, "");
-                                p.sendMessage(ChatColor.GREEN + "Cleared line 3");
-                                return true;
-                            } else if (args[1].equalsIgnoreCase("4")) {
-                                PlayerView.viewBlockActual(p, 3, "");
-                                p.sendMessage(ChatColor.GREEN + "Cleared line 4");
+                        if (args[0].equalsIgnoreCase("clear")) {
+                            if (args[1].equalsIgnoreCase("clearAll")) {
+                                PlayerView.clearAll(p);
+                                p.sendMessage(ChatColor.GREEN + "Cleared all lines");
                                 return true;
                             } else {
-                                p.sendMessage(ChatColor.RED + "Invalid line number");
-                                return true;
+                                if (args[1].equalsIgnoreCase("1")) {
+                                    PlayerView.viewBlockActual(p, 0, "");
+                                    p.sendMessage(ChatColor.GREEN + "Cleared line 1");
+                                    return true;
+                                } else if (args[1].equalsIgnoreCase("2")) {
+                                    PlayerView.viewBlockActual(p, 1, "");
+                                    p.sendMessage(ChatColor.GREEN + "Cleared line 2");
+                                    return true;
+                                } else if (args[1].equalsIgnoreCase("3")) {
+                                    PlayerView.viewBlockActual(p, 2, "");
+                                    p.sendMessage(ChatColor.GREEN + "Cleared line 3");
+                                    return true;
+                                } else if (args[1].equalsIgnoreCase("4")) {
+                                    PlayerView.viewBlockActual(p, 3, "");
+                                    p.sendMessage(ChatColor.GREEN + "Cleared line 4");
+                                    return true;
+                                } else {
+                                    p.sendMessage(ChatColor.RED + "Invalid line number");
+                                    return true;
+                                }
                             }
-                        }
-                    }
+                        }}
                     if (args.length==3) {
                        // try {
                             int line = Integer.parseInt(args[1])-1;
