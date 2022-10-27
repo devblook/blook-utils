@@ -52,6 +52,11 @@ bukkit {
             permission = "blootils.command.heal"
             usage = "/heal"
         }
+        register("sign") {
+            description = "Edit sign looking you"
+            permission = "blootils.command.sign"
+            usage = "/sign edit"
+        }
     }
 }
 
