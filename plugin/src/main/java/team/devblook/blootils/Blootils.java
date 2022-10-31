@@ -6,6 +6,9 @@ import org.bukkit.plugin.java.JavaPlugin;
 import team.devblook.blootils.command.*;
 
 import team.devblook.blootils.listeners.InteractListener;
+import team.devblook.blootils.listeners.PlayerDeathListener;
+import team.devblook.blootils.listeners.PlayerJoin;
+import team.devblook.blootils.listeners.PlayerLeave;
 import team.devblook.blootils.managers.UsersData;
 public class Blootils extends JavaPlugin {
     private static Economy econ = null;
@@ -32,6 +35,9 @@ public class Blootils extends JavaPlugin {
         this.getCommand("enderchest").setExecutor(new EnderChestCommand());
         this.getCommand("disposal").setExecutor(new DisposalCommand());
         this.getServer().getPluginManager().registerEvents(new InteractListener(),this);
+        this.getServer().getPluginManager().registerEvents(new PlayerJoin(), this);
+        this.getServer().getPluginManager().registerEvents(new PlayerLeave(), this);
+        this.getServer().getPluginManager().registerEvents(new PlayerDeathListener(), this);
 
 
 
