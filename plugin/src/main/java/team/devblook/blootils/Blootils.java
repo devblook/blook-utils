@@ -30,6 +30,7 @@ public class Blootils extends JavaPlugin {
         this.getCommand("gmc").setExecutor(new CreativeCommand());
         this.getCommand("gmsp").setExecutor(new SpectatorCommand());
         this.getCommand("enderchest").setExecutor(new EnderChestCommand());
+        this.getCommand("disposal").setExecutor(new DisposalCommand());
         this.getServer().getPluginManager().registerEvents(new InteractListener(),this);
 
 

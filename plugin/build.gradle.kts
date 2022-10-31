@@ -75,6 +75,11 @@ bukkit {
             permission = "blootils.command.enderchest"
             usage = "/enderchest"
         }
+        register("disposal"){
+            description = "Open the disposal"
+            permission = "blootils.command.disposal"
+            usage = "/disposal"
+        }
         register("sign") {
             description = "Edit sign looking you"
             permission = "blootils.command.sign"
