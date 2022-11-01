@@ -16,7 +16,7 @@ public class PlayerDeathListener implements Listener {
         Player player = event.getEntity();
 
         if(event.getEntity().getPlayer().isDead()){
-            event.setDeathMessage(ChatColor.RED + player.getName() + ChatColor.GRAY + "has died");
+            event.setDeathMessage(ChatColor.RED + player.getName() + ChatColor.GRAY + " has died.");
 
             }
         }
