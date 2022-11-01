@@ -6,6 +6,7 @@ import org.bukkit.event.player.PlayerInteractEvent;
 
 public abstract class SignManager{
     protected Sign sign;
+
     public SignManager(Sign sign) {
         this.sign = sign;
     }

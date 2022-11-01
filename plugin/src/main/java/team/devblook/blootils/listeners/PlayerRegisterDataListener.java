@@ -15,10 +15,8 @@ public class PlayerRegisterDataListener implements Listener{
     }
 
     @EventHandler
-    public void onPlayerRegisterData(PlayerJoinEvent event) {
+    private void onPlayerRegisterData(PlayerJoinEvent event) {
         usersData.addUser(new User(event.getPlayer().getUniqueId()));
-
-
         usersData.getUser(event.getPlayer().getUniqueId());
     }
 
