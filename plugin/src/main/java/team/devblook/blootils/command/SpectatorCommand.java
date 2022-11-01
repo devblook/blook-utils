@@ -13,7 +13,7 @@ public class SpectatorCommand implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if(sender instanceof Player player) {
-            if (!player.hasPermission("blootils.spectator")) {
+            if (!player.hasPermission("blootils.spectator") || player.isOp()) {
                 player.setGameMode(GameMode.SPECTATOR);
                 player.sendMessage(ChatColor.GRAY + "Gamemode set to " + ChatColor.BLUE + "spectator"
                         + ChatColor.GRAY + ".");
