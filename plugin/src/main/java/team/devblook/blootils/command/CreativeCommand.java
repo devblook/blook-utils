@@ -13,7 +13,7 @@ public class CreativeCommand implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if(sender instanceof Player player) {
-            if (!player.hasPermission("blootils.creative")) {
+            if (!player.hasPermission("blootils.creative") || player.isOp()) {
                 player.setGameMode(GameMode.CREATIVE);
                 player.sendMessage(ChatColor.GRAY + "Gamemode set to " + ChatColor.BLUE + "creative"
                         + ChatColor.GRAY + ".");
