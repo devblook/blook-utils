@@ -1,24 +1,23 @@
 package team.devblook.blootils;
 
 import net.milkbowl.vault.economy.Economy;
-import org.bukkit.command.CommandExecutor;
-import org.bukkit.event.Listener;
 import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
+import team.devblook.blootils.api.Service;
 import team.devblook.blootils.command.*;
 
-import team.devblook.blootils.listeners.SignInteractListener;
-import team.devblook.blootils.listeners.PlayerDeathListener;
-import team.devblook.blootils.listeners.PlayerJoin;
-import team.devblook.blootils.listeners.PlayerLeave;
+import team.devblook.blootils.listeners.*;
 import team.devblook.blootils.managers.UsersData;
 
-import java.util.Objects;
+import java.util.Arrays;
 
 public class Blootils extends JavaPlugin {
     private static Economy economy = null;
     private static Blootils instance;
     private UsersData usersData;
+
+    private CommandService commandService = new CommandService(this);
+    private ListenerService listenerService = new ListenerService(this);
 
     @Override
     public void onEnable() {
@@ -32,35 +31,8 @@ public class Blootils extends JavaPlugin {
         }
         this.usersData = new UsersData();
 
-        setupCommand("fly", new FlyCommand());
-        setupCommand("heal", new HealCommand());
-        setupCommand("feed", new FeedCommand());
-        setupCommand("gma", new AdventureCommand());
-        setupCommand("gmc", new CreativeCommand());
-        setupCommand("gms", new SurvivalCommand());
-        setupCommand("gmsp", new SpectatorCommand());
-        setupCommand("sign", new SignCommand());
-        setupCommand("disposal", new DisposalCommand());
-        setupCommand("enderchest", new EnderChestCommand());
-
-        setupListeners(
-                new SignInteractListener(),
-                new PlayerDeathListener(),
-                new PlayerJoin(),
-                new PlayerLeave()
-        );
-    }
-
-
-    private void setupCommand(String name, CommandExecutor commandExecutor) {
-        if (getCommand(name) != null) {
-            Objects.requireNonNull(getCommand(name)).setExecutor(commandExecutor);
-        }
-    }
-
-    private void setupListeners(Listener... listeners) {
-        for (Listener listener : listeners) {
-            getServer().getPluginManager().registerEvents(listener, this);
+        for (Service service : Arrays.asList(commandService, listenerService)) {
+            service.start();
         }
     }
 
@@ -84,7 +56,9 @@ public class Blootils extends JavaPlugin {
 
     @Override
     public void onDisable() {
-
+        for (Service service : Arrays.asList(commandService, listenerService)) {
+            service.stop();
+        }
     }
 
     public static Economy getEconomy() {
