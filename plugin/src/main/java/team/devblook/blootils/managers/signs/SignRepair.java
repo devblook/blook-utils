@@ -12,7 +12,6 @@ import org.bukkit.inventory.meta.Damageable;
 import org.bukkit.inventory.meta.ItemMeta;
 import team.devblook.blootils.Blootils;
 import team.devblook.blootils.managers.SignManager;
-import team.devblook.blootils.utils.InventoryClear;
 
 public class SignRepair extends SignManager {
     public SignRepair(Sign sign) {
@@ -50,7 +49,7 @@ public class SignRepair extends SignManager {
                 Sign finalSign = (Sign) block.getState();
                 String lineStrip = finalSign.getLine(line());
                 if (lineStrip.equalsIgnoreCase(text())) {
-                    Economy economy = Blootils.getEcon();
+                    Economy economy = Blootils.getEconomy();
                     ItemStack item = player.getInventory().getItemInMainHand();
                     if (item.getType() == Material.AIR) {
                         player.sendMessage(ChatColor.RED + "You must be holding an item to repair!");

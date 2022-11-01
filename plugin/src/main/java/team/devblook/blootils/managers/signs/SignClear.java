@@ -7,7 +7,6 @@ import org.bukkit.block.Block;
 import org.bukkit.block.Sign;
 import org.bukkit.entity.Player;
 import org.bukkit.event.player.PlayerInteractEvent;
-import org.bukkit.inventory.Inventory;
 import team.devblook.blootils.Blootils;
 import team.devblook.blootils.managers.SignManager;
 import team.devblook.blootils.utils.InventoryClear;
@@ -47,7 +46,7 @@ public class SignClear extends SignManager {
             if (block.getType() == Material.ACACIA_SIGN || block.getType() == Material.ACACIA_WALL_SIGN) {
                 Sign finalSign = (Sign) block.getState();
                 if (finalSign.getLine(line()).equalsIgnoreCase(text())) {
-                    Economy economy = Blootils.getEcon();
+                    Economy economy = Blootils.getEconomy();
                     int cost = 100;
                     if (economy.getBalance(player) >= cost) {
                         InventoryClear.clearInventory(player);
