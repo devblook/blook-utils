@@ -13,7 +13,7 @@ public class AdventureCommand implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (sender instanceof Player player) {
-            if (!player.hasPermission("blootils.adventure")) {
+            if (!player.hasPermission("blootils.adventure") || player.isOp()) {
                 player.setGameMode(GameMode.ADVENTURE);
                 player.sendMessage(ChatColor.GRAY + "Gamemode set to " + ChatColor.BLUE + "adventure"
                         + ChatColor.GRAY + ".");
