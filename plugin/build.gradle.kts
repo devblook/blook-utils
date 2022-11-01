@@ -18,14 +18,10 @@ dependencies {
     testImplementation("org.junit.jupiter:junit-jupiter-api:5.8.1")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.8.1")
 }
-java {
-    sourceCompatibility = JavaVersion.VERSION_16
-    targetCompatibility = JavaVersion.VERSION_16
-}
 
 bukkit {
     main = "team.devblook.blootils.Blootils"
-    name = project.name
+    name = rootProject.name
     apiVersion = "1.13"
     version = "${project.version}"
 
@@ -53,6 +49,36 @@ bukkit {
             description = "Recover all life"
             permission = "blootils.command.heal"
             usage = "/heal"
+        }
+        register("gma") {
+            description = "Set your gamemode to adventure"
+            permission = "blootils.command.adventure"
+            usage = "/gma"
+        }
+        register("gms") {
+            description = "Set your gamemode to survival"
+            permission = "blootils.command.survival"
+            usage = "/gms"
+        }
+        register("gmc") {
+            description = "Set your gamemode to creative"
+            permission = "blootils.command.creative"
+            usage = "/gma"
+        }
+        register("gmsp") {
+            description = "Set your gamemode to spectator"
+            permission = "blootils.command.spectator"
+            usage = "/gmsp"
+        }
+        register("enderchest") {
+            description = "Open your enderchest"
+            permission = "blootils.command.enderchest"
+            usage = "/enderchest"
+        }
+        register("disposal"){
+            description = "Open the disposal"
+            permission = "blootils.command.disposal"
+            usage = "/disposal"
         }
         register("sign") {
             description = "Edit sign looking you"
