@@ -21,7 +21,7 @@ dependencies {
 
 bukkit {
     main = "team.devblook.blootils.Blootils"
-    name = project.name
+    name = rootProject.name
     apiVersion = "1.13"
     version = "${project.version}"
 
