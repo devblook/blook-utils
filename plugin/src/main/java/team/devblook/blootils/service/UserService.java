@@ -5,8 +5,6 @@ import team.devblook.blootils.api.Service;
 public class UserService implements Service {
 
 
-
-
     @Override
     public void start() {
 

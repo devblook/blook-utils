@@ -1,3 +1,3 @@
-rootProject.name="Blootils"
+rootProject.name = "Blootils"
 
 include("api", "plugin")

@@ -15,7 +15,7 @@ public class HealCommand implements CommandExecutor {
             if (!player.hasPermission("blootils.heal") || player.isOp()) {
                 player.sendMessage(ChatColor.RED + "You don't have the enough permissions to access this command.");
                 player.playSound(player.getLocation(), Sound.ENTITY_ITEM_BREAK, 1, 1);
-            }else{
+            } else {
                 //TODO: create a new path config to configure the heal level
                 player.setHealth(20);
                 player.playSound(player.getLocation(), Sound.ENTITY_SPLASH_POTION_BREAK, 1, 1);

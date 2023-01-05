@@ -5,18 +5,16 @@ import team.devblook.blootils.api.Service;
 
 import javax.inject.Inject;
 
-public class PluginService implements Service {
+public class EconomyService implements Service {
     @Inject
     private Blootils plugin;
 
     @Override
     public void start() {
-        plugin.getLogger().info("Blootils has been enabled!");
-    }
+        if (plugin.getServer().getPluginManager().getPlugin("Vault") == null) {
+            plugin.getLogger().info("Vault not found, disabling economy features");
+            return;
+        }
 
-    @Override
-    public void stop() {
-        plugin.getLogger().info("Blootils has been disabled!");
     }
-
 }

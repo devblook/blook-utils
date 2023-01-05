@@ -6,8 +6,7 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabExecutor;
 import org.bukkit.entity.Player;
-
-import team.devblook.blootils.utils.PlayerView;
+import team.devblook.blootils.util.PlayerView;
 
 import java.util.List;
 
@@ -19,7 +18,7 @@ public class SignCommand implements TabExecutor {
 
         if (sender instanceof Player p) {
             if (p.hasPermission("blootils.sign")) {
-                if (p.getTargetBlock(null, 5).getType() == Material.ACACIA_SIGN|| p.getTargetBlock(null, 5).getType() == Material.ACACIA_WALL_SIGN) {
+                if (p.getTargetBlock(null, 5).getType() == Material.ACACIA_SIGN || p.getTargetBlock(null, 5).getType() == Material.ACACIA_WALL_SIGN) {
                     if (args.length == 0) {
                         p.sendMessage(ChatColor.RED + "/sign edit <line> <text>");
                         p.sendMessage(ChatColor.RED + "/sign clear <line>");
@@ -29,10 +28,10 @@ public class SignCommand implements TabExecutor {
 
                     }
                     if (args.length == 1) {
-                        if (args[0].equalsIgnoreCase("edit")){
+                        if (args[0].equalsIgnoreCase("edit")) {
                             p.sendMessage(ChatColor.RED + "/sign edit <line> <text>");
 
-                        }else if(args[0].equalsIgnoreCase("clear")){
+                        } else if (args[0].equalsIgnoreCase("clear")) {
                             p.sendMessage(ChatColor.RED + "/sign clear <line>");
                             p.sendMessage(ChatColor.RED + "/sign clear all");
                             return true;
@@ -40,7 +39,8 @@ public class SignCommand implements TabExecutor {
                         }
 
                         return true;
-                    }if (args.length==2){
+                    }
+                    if (args.length == 2) {
                         if (args[0].equalsIgnoreCase("clear")) {
                             if (args[1].equalsIgnoreCase("clearAll")) {
                                 PlayerView.clearAll(p);
@@ -68,40 +68,41 @@ public class SignCommand implements TabExecutor {
                                     return true;
                                 }
                             }
-                        }}
-                    if (args.length==3) {
-                       // try {
-                            int line = Integer.parseInt(args[1])-1;
-                            if (line == 0 || line == 1 || line == 2 || line == 3) {
-                                String text = args[2];
-                                text = ChatColor.translateAlternateColorCodes('&', text);
+                        }
+                    }
+                    if (args.length == 3) {
+                        // try {
+                        int line = Integer.parseInt(args[1]) - 1;
+                        if (line == 0 || line == 1 || line == 2 || line == 3) {
+                            String text = args[2];
+                            text = ChatColor.translateAlternateColorCodes('&', text);
 
-                                if (text == null) {
-                                    p.sendMessage(ChatColor.RED + "You must enter text!");
-                                    return false;
-                                }
-                                PlayerView.viewBlockActual(p, line, text);
-                                return true;
-
-
-                            } else {
-                                p.sendMessage(ChatColor.RED + "Please enter a valid line number");
+                            if (text == null) {
+                                p.sendMessage(ChatColor.RED + "You must enter text!");
+                                return false;
                             }
-                       // }catch (NumberFormatException e){
-                            p.sendMessage(ChatColor.RED + "Please enter a valid line number");
-                       // }
+                            PlayerView.viewBlockActual(p, line, text);
+                            return true;
 
-                    }else{
+
+                        } else {
+                            p.sendMessage(ChatColor.RED + "Please enter a valid line number");
+                        }
+                        // }catch (NumberFormatException e){
+                        p.sendMessage(ChatColor.RED + "Please enter a valid line number");
+                        // }
+
+                    } else {
                         p.sendMessage(ChatColor.RED + "Need more arguments!");
 
                     }
 
 
-                }  else {
+                } else {
                     p.sendMessage(ChatColor.BOLD + "You are not looking at a sign");
                 }
 
-            }else {
+            } else {
                 p.sendMessage(ChatColor.RED + "You don't have the enough permissions to access this command.");
                 return true;
 
@@ -128,23 +129,24 @@ public class SignCommand implements TabExecutor {
 
         } else if (args.length == 3) {
             int line = Integer.parseInt(args[1]);
-            if (line==1) {
+            if (line == 1) {
                 String text = PlayerView.returnText(p, 0);
                 return List.of(text);
-            } else if (line==2) {
+            } else if (line == 2) {
                 String text = PlayerView.returnText(p, 1);
                 return List.of(text);
-            } else if (line==3) {
+            } else if (line == 3) {
                 String text = PlayerView.returnText(p, 2);
                 return List.of(text);
-            } else if (line==4) {
+            } else if (line == 4) {
                 String text = PlayerView.returnText(p, 3);
                 return List.of(text);
             }
 
-            }
+        }
 
 
-        return null;}
+        return null;
+    }
 
 }

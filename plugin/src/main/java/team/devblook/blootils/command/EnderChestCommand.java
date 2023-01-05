@@ -17,9 +17,9 @@ public class EnderChestCommand implements CommandExecutor {
                 player.openInventory(player.getEnderChest());
                 player.playSound(player.getLocation(), Sound.BLOCK_ENDER_CHEST_OPEN, 1, 1);
                 return true;
-            }else{
+            } else {
                 player.sendMessage(ChatColor.RED + "You don't have the enough permissions to access this command.");
-                player.playSound(player.getLocation(), Sound.BLOCK_ANVIL_LAND, 1,1);
+                player.playSound(player.getLocation(), Sound.BLOCK_ANVIL_LAND, 1, 1);
                 return true;
             }
         }

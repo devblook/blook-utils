@@ -1,4 +1,4 @@
-package team.devblook.blootils.listeners;
+package team.devblook.blootils.listener;
 
 import org.bukkit.Sound;
 import org.bukkit.entity.Player;
@@ -8,12 +8,12 @@ import org.bukkit.event.player.PlayerJoinEvent;
 
 import java.util.List;
 
-import static team.devblook.blootils.utils.TextUtils.parseLegacyColors;
+import static team.devblook.blootils.util.TextUtils.parseLegacyColors;
 
-public class PlayerJoin implements Listener {
+public class PlayerJoinListener implements Listener {
 
     @EventHandler
-    public void onJoin(PlayerJoinEvent event){
+    public void onJoin(PlayerJoinEvent event) {
 
         //TODO: create a new path to configure the join message and motd when a player joins to the server
         Player player = event.getPlayer();

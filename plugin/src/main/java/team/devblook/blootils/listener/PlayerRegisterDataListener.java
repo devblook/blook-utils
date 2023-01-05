@@ -1,12 +1,12 @@
-package team.devblook.blootils.listeners;
+package team.devblook.blootils.listener;
 
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 import team.devblook.blootils.api.User;
-import team.devblook.blootils.managers.UsersData;
+import team.devblook.blootils.manager.UsersData;
 
-public class PlayerRegisterDataListener implements Listener{
+public class PlayerRegisterDataListener implements Listener {
 
     private final UsersData usersData;
 

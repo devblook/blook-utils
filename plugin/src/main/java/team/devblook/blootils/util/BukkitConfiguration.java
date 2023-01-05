@@ -1,4 +1,4 @@
-package team.devblook.blootils.FileYml;
+package team.devblook.blootils.util;
 
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;

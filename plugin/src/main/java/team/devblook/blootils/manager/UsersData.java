@@ -1,4 +1,4 @@
-package team.devblook.blootils.managers;
+package team.devblook.blootils.manager;
 
 import team.devblook.blootils.api.User;
 

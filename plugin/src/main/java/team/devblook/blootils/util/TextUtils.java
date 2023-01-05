@@ -1,4 +1,4 @@
-package team.devblook.blootils.utils;
+package team.devblook.blootils.util;
 
 import org.bukkit.ChatColor;
 
