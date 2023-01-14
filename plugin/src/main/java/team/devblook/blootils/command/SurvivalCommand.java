@@ -13,7 +13,7 @@ public class SurvivalCommand implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (sender instanceof Player player) {
-            if (!player.hasPermission("blootils.survival") || player.isOp()) {
+            if (!player.hasPermission("blootils.command.survival") || !player.isOp()) {
                 player.setGameMode(GameMode.SURVIVAL);
                 player.sendMessage(ChatColor.GRAY + "Gamemode set to " + ChatColor.BLUE + "survival"
                         + ChatColor.GRAY + ".");
