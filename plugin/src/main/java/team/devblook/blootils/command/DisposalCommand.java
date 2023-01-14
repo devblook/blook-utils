@@ -14,15 +14,15 @@ public class DisposalCommand implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (sender instanceof Player player) {
-            if (!player.hasPermission("blootils.disposal") || player.isOp()) {
+            if (!player.hasPermission("blootils.command.disposal") || !player.isOp()) {
+                player.sendMessage(ChatColor.RED + "You don't have the enough permissions to access this command.");
+                player.playSound(player.getLocation(), Sound.BLOCK_ANVIL_LAND, 1, 1);
+                return true;
+            } else {
                 Inventory inv = Bukkit.createInventory(null, 9, ChatColor.DARK_GRAY + "Disposal");
                 player.openInventory(inv);
                 player.sendMessage(ChatColor.GREEN + "Opening disposal...");
                 player.playSound(player.getLocation(), Sound.BLOCK_CHEST_OPEN, 1, 1);
-                return true;
-            } else {
-                player.sendMessage(ChatColor.RED + "You don't have the enough permissions to access this command.");
-                player.playSound(player.getLocation(), Sound.BLOCK_ANVIL_LAND, 1, 1);
                 return true;
             }
         }
