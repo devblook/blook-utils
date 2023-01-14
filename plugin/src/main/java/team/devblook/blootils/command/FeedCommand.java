@@ -12,7 +12,7 @@ public class FeedCommand implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (sender instanceof Player player) {
-            if (!player.hasPermission("blootils.feed") || player.isOp()) {
+            if (!player.hasPermission("blootils.command.food") || !player.isOp()) {
                 player.sendMessage(ChatColor.RED + "You don't have the enough permissions to access this command.");
                 player.playSound(player.getLocation(), Sound.ENTITY_ITEM_BREAK, 1, 1);
                 return true;
